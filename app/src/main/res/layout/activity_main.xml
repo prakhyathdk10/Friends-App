@@ -71,6 +71,14 @@
         android:id="@+id/reg"
         android:background="#3F51B5"
         />
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="view"
+        android:layout_margin="20px"
+        android:id="@+id/view"
+        android:background="#3F51B5"
+        />
 
 
 

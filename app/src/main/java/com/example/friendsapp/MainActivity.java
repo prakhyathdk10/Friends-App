@@ -1,5 +1,7 @@
 package com.example.friendsapp;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -20,9 +22,11 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class MainActivity extends AppCompatActivity {
-    AppCompatButton b1;
+    AppCompatButton b1,b2;
     EditText e1, e2, e3, e4;
     String apiUrl = "https://friendsapi-re5a.onrender.com/adddata";
+
+    @SuppressLint("MissingInflatedId")
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         e3 = (EditText) findViewById(R.id.fnn);
         e4 = (EditText) findViewById(R.id.df);
         b1 = (AppCompatButton) findViewById(R.id.reg);
-
+        b2 = (AppCompatButton) findViewById(R.id.view);
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,6 +74,13 @@ public class MainActivity extends AppCompatActivity {
                 // request queue
                 RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
                 requestQueue.add(jsonObjectRequest);
+            }
+        });
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i=new Intent(getApplicationContext(), view.class);
+                startActivity(i);
             }
         });
 
